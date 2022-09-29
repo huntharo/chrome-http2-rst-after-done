@@ -46,9 +46,11 @@ http2_max_concurrent_streams 10;
 ```
 
 Initial requests are `ERR_FAILED`:
+
 ![Chrome Requests - ERR_FAILED](media/images/chrome-local-keepalive-10-err_failed.png)
 
 Later requests are `ERR_HTTP2_SERVER_REFUSED_STREAM`:
+
 ![Chrome Requests - ERR_HTTP2_SERVER_REFUSED_STREAM](media/images/chrome-local-keepalive-10-refused.png)
 
 ### With Limit 10 Requests before GOAWAY and 10,000 Max Concurrent Streams
@@ -67,6 +69,8 @@ keepalive_requests 10000;
 http2_max_concurrent_streams 10000;
 ```
 
+No errors at all:
+
 ![Chrome Requests - No Errors](media/images/chrome-local-10000-max-requests-no-errors.gif)
 
 ### With Limit 10,000 requests before GOAWAY and 10 Max Concurrent Streams
@@ -78,15 +82,13 @@ http2_max_concurrent_streams 10;
 
 Responses / no errors - same as the 10,000 / 10,000 case above
 
-
 ### With Limit 195 requests before GOAWAY and 10 Max Concurrent Streams
-
-A single file *usually* fails to load with `ERR_FAILED` in this case.
 
 ```
 keepalive_requests 190;
 http2_max_concurrent_streams 10;
 ```
+A single file *usually* fails to load with `ERR_FAILED` in this case:
 
 ![Chrome Requests - 1 Error](media/images/chrome-local-keepalive-190-1-err_failed.gif)
 
