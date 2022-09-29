@@ -1,0 +1,26 @@
+[ req ]
+default_bits        = 2048
+distinguished_name  = subject
+req_extensions      = req_ext
+x509_extensions     = x509_ext
+string_mask         = utf8only
+prompt              = no
+
+[ subject ]
+countryName         = US
+stateOrProvinceName = NY
+localityName        = New York
+organizationName    = Nobody
+commonName          = localhost
+emailAddress        = nobody@pwrdrvr.com
+
+# Section x509_ext is used when generating a self-signed certificate. I.e., openssl req -x509 ...
+[ x509_ext ]
+nsComment           = "OpenSSL Generated Certificate"
+
+# Section req_ext is used when generating a certificate signing request. I.e., openssl req ...
+[ req_ext ]
+subjectKeyIdentifier  = hash
+basicConstraints      = CA:FALSE
+keyUsage              = digitalSignature, keyEncipherment
+nsComment             = "OpenSSL Generated Certificate"

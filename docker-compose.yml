@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+  load-balancer:
+    build: .
+    ports:
+      - 80:80
+      - 443:443
+networks:
+  internal_network:
