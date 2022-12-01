@@ -41,9 +41,13 @@ Type `thisisunsafe` in the Chrome window to allow usage of the self-signed certi
 
 ### With Limit 10 Requests before GOAWAY and 10 Max Concurrent Streams
 ```
+
 keepalive_requests 10;
 http2_max_concurrent_streams 10;
 ```
+
+![http2-10-10](https://user-images.githubusercontent.com/5617868/205176359-0245cba0-668b-4694-8544-74079e404e32.gif)
+
 
 Initial requests are `ERR_FAILED`:
 
