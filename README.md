@@ -80,6 +80,8 @@ keepalive_requests 10000;
 http2_max_concurrent_streams 10;
 ```
 
+https://user-images.githubusercontent.com/5617868/205175991-a6d87008-9847-4ae1-b9fd-440de0996d23.mp4
+
 Responses / no errors - same as the 10,000 / 10,000 case above
 
 ### With Limit 195 requests before GOAWAY and 10 Max Concurrent Streams
